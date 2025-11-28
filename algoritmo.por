@@ -15,13 +15,13 @@ programa {
         leia(op)
 
         se (op == "+") {
-            resultado = a * b
+            resultado = a + b
         } senao se (op == "-") {
-            resultado = b - a + 1
+            resultado = a - b
         } senao {
-            resultado = a / 0
+            escreva("Nenhum sinal válido escolhido\n")
         }
 
-        escreva("Resultado final: ", b)
+        escreva("Resultado final: ", resultado)
     }
 }
