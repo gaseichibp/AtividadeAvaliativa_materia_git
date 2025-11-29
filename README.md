@@ -57,9 +57,66 @@ programa {
 - Após a correção, editei metade do ReadMe baseado no modelo do professor Eron e deixei registros do que fiz
 
 ### Felipe Furlan da Silva
-- Como Configurou o Git? não deixe exposto sua chave.
-- Fez `git pull` após o commit de Fulano.
-- Adicionou lógica de ... 
+- Configurei a autenticação SSH para trabalhar de forma segura usando o comando:
+``
+ssh-keygen -t ed25519 -C "felipefurlan53@gmail.com"
+`` 
+- Configurei o nome e email de usuário:
+```
+$ git config --global user.name "Felipe Furlan"
+$ git config --global user.email "felipefurlan53@gmail.com"
+```
+- Clonei o repositório com o comando `git clone` via SSH
+- Atualizei o repositório local antes de editar com: `git pull origin main`
+- Concertei o código raiz pelo Portugol Web Studio:
+
+#### Estrutura Código Concertado :
+```
+funcao inicio() {
+
+
+        real a, b, resultado
+        caracter op
+
+
+        escreva("Digite o primeiro numero: ")
+        leia(a)
+
+
+        escreva("Digite o segundo numero: ")
+        leia(b)
+
+
+        escreva("Escolha a operacao (+ ou -): ")
+        leia(op)
+
+
+        se (op == "+") {
+            resultado = a + b
+        } senao se (op == "-") {
+            resultado = a - b
+        } senao {
+            escreva("Nenhum sinal válido escolhido\n")
+        }
+
+
+        escreva("Resultado final: ", resultado)
+    }
+}
+```
+
+- Adicinoei arquivo ao stage:
+``
+$ git add .
+``
+- Comitei o código concertado:
+``
+git commit -m "Codigo concertado"
+``
+- Enviei para GitHub: 
+``
+git push origin main
+``
 
 ## Comandos utilizados
 Todos os comandos foram executados via terminal utilizando chave SSH:
@@ -82,7 +139,18 @@ Todos os comandos foram executados via terminal utilizando chave SSH:
 15. Criar commit: `git commit -m "algoritmo de soma e subtração em Portugol adicionado"`
 16. Enviar para GitHub: `git push origin main`
 
-### Comandos de Felipe
+### Comandos de Felipe (por GitBash)
+
+1. Configurar email: `git config --global user.email "gabriels.baptista05@gmail.com`
+1. Gerar chave SSH: `ssh-keygen -t ed25519 -C "felipefurlan53@gmail.com"`
+2. Visualizar chave públicacat: `~/.ssh/id_ed25519.pub`
+3. Clonar repositório via SSH: `git clone git@github.com:gaseichibp/AtividadeAvaliativa_materia_git.git`
+4. Entrar na pasta do projeto: `cd AtividadeAvaliativa_materia_git`
+5. Atualizar repositório local: `git pull origin main`
+6. Adicionar arquivo ao stage: `$ git add .`
+7. Criar commit: `git commit -m "Codigo concertado"`
+8. Verificar conexão remota: `git remote -v`
+9. Enviar para GitHub: `git push origin main`
 
 ## Observações
 Cada etapa foi realizada por apenas um integrante por vez, 
