@@ -211,11 +211,11 @@ funcao inicio() {
     }
 }
 ```
-(Em "se (op == "+")",  substitui o sinal '*' por '+' por ser uma conta de mais
-Em "se (op == "-")", substitui 'b - a + 1' por 'a - b' por ser uma conta de menos entre os valores passados
+(Em "se (op == "+")",  substitui o sinal '*' por '+' por ser uma conta de mais. 
+Em "se (op == "-")", substitui 'b - a + 1' por 'a - b' por ser uma conta de menos entre os valores passados. 
 Em "senao", substitui 'a / 0' por 'Nenhum sinal válido escolhido', pois se trata de uma operação diferente das objetivas)
 
-- Adicinoei arquivo ao stage:
+- Adicionei arquivo ao stage:
 ``
 studi@DESKTOP-QL4B3BH MINGW64 ~/AtividadeAvaliativa_materia_git (main)
 $ git add .
