@@ -97,16 +97,84 @@ programa {
 
 ### Felipe Furlan da Silva
 - Configurei a autenticação SSH para trabalhar de forma segura usando o comando:
-``
-ssh-keygen -t ed25519 -C "felipefurlan53@gmail.com"
-`` 
+```
+studi@DESKTOP-QL4B3BH MINGW64 ~
+$ ssh-keygen -t ed25519 -C "felipefurlan53@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/studi/.ssh/id_ed25519):
+
+studi@DESKTOP-QL4B3BH MINGW64 ~
+$ ssh-keygen -t ed25519 -C "felipefurlan53@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/c/Users/studi/.ssh/id_ed25519):
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/studi/.ssh/id_ed25519
+Your public key has been saved in /c/Users/studi/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:GLKd3ERgUHPnduGhQBZf/VqCD5WZUuvtMN3VPVjMWY0 felipefurlan53@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|    .o=oB.. +o+*=|
+|     . = = +.oE=+|
+|    . . . = o=.o+|
+|     = * . .o..o*|
+|    . = S    o+++|
+|              o+ |
+|                .|
+|                 |
+|                 |
++----[SHA256]-----+
+```
+- Copiando a chave pública:
+```
+studi@DESKTOP-QL4B3BH MINGW64 ~
+$ ssh-add ~/.ssh/id_ed25519
+Enter passphrase for /c/Users/studi/.ssh/id_ed25519:
+Identity added: /c/Users/studi/.ssh/id_ed25519 (felipefurlan53@gmail.com)
+
+studi@DESKTOP-QL4B3BH MINGW64 ~
+$ cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPUefRWoN6Cp8FiVPps/7YC3YvMALhfZG4GqBAZ6Kbb+ felipefurlan53@gmail.com
+```
+
 - Configurei o nome e email de usuário:
 ```
 $ git config --global user.name "Felipe Furlan"
 $ git config --global user.email "felipefurlan53@gmail.com"
 ```
-- Clonei o repositório com o comando `git clone` via SSH
-- Atualizei o repositório local antes de editar com: `git pull origin main`
+- Clonei o repositório com o comando `git clone` via SSH:
+```
+studi@DESKTOP-QL4B3BH MINGW64 ~
+$ git clone git@github.com:gaseichibp/AtividadeAvaliativa_materia_git.git
+Cloning into 'AtividadeAvaliativa_materia_git'...
+
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+```
+
+- Atualizei o repositório local antes de editar com `git pull origin main`:
+```
+studi@DESKTOP-QL4B3BH MINGW64 ~/AtividadeAvaliativa_materia_git (main)
+$ git pull origin main
+
+remote: Enumerating objects: 4, done.
+remote: Counting objects: 100% (4/4), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 3 (delta 0), pack-reused 0 (from 0)
+Unpacking objects: 100% (3/3), 517 bytes | 64.00 KiB/s, done.
+From github.com:gaseichibp/AtividadeAvaliativa_materia_git
+ * branch            main       -> FETCH_HEAD
+   9f21bf3..0bf1408  main       -> origin/main
+Updating 9f21bf3..0bf1408
+Fast-forward
+ algoritmo.por | 27 +++++++++++++++++++++++++++
+ 1 file changed, 27 insertions(+)
+ create mode 100644 algoritmo.por
+```
+
 - Concertei o código raiz pelo Portugol Web Studio:
 
 #### Estrutura Código Concertado :
@@ -143,19 +211,39 @@ funcao inicio() {
     }
 }
 ```
+(Em "se (op == "+")",  substitui o sinal '*' por '+' por ser uma conta de mais
+Em "se (op == "-")", substitui 'b - a + 1' por 'a - b' por ser uma conta de menos entre os valores passados
+Em "senao", substitui 'a / 0' por 'Nenhum sinal válido escolhido', pois se trata de uma operação diferente das objetivas)
 
 - Adicinoei arquivo ao stage:
 ``
+studi@DESKTOP-QL4B3BH MINGW64 ~/AtividadeAvaliativa_materia_git (main)
 $ git add .
 ``
 - Comitei o código concertado:
-``
-git commit -m "Codigo concertado"
-``
+```
+studi@DESKTOP-QL4B3BH MINGW64 ~/AtividadeAvaliativa_materia_git (main)
+$ git commit -m "Codigo concertado"
+
+[main 517cea3] Codigo concertado
+ 1 file changed, 4 insertions(+), 4 deletions(-)
+```
+
 - Enviei para GitHub: 
-``
-git push origin main
-``
+```
+studi@DESKTOP-QL4B3BH MINGW64 ~/AtividadeAvaliativa_materia_git (main)
+$ git push origin main
+
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 394 bytes | 394.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To github.com:gaseichibp/AtividadeAvaliativa_materia_git.git
+   0bf1408..517cea3  main -> main
+```
 
 ## Comandos utilizados
 Todos os comandos foram executados via terminal utilizando chave SSH:
@@ -180,16 +268,17 @@ Todos os comandos foram executados via terminal utilizando chave SSH:
 
 ### Comandos de Felipe (por GitBash)
 
-1. Configurar email: `git config --global user.email "gabriels.baptista05@gmail.com`
-1. Gerar chave SSH: `ssh-keygen -t ed25519 -C "felipefurlan53@gmail.com"`
-2. Visualizar chave públicacat: `~/.ssh/id_ed25519.pub`
-3. Clonar repositório via SSH: `git clone git@github.com:gaseichibp/AtividadeAvaliativa_materia_git.git`
-4. Entrar na pasta do projeto: `cd AtividadeAvaliativa_materia_git`
-5. Atualizar repositório local: `git pull origin main`
-6. Adicionar arquivo ao stage: `$ git add .`
-7. Criar commit: `git commit -m "Codigo concertado"`
-8. Verificar conexão remota: `git remote -v`
-9. Enviar para GitHub: `git push origin main`
+1. Configurar nome de usuário: `$ git config --global user.name "Felipe Furlan"`
+2. Configurar email: `git config --global user.email "felipefurlan53@gmail.com`
+3. Gerar chave SSH: `ssh-keygen -t ed25519 -C "felipefurlan53@gmail.com"`
+4. Visualizar chave públicacat: `~/.ssh/id_ed25519.pub`
+5. Clonar repositório via SSH: `git clone git@github.com:gaseichibp/AtividadeAvaliativa_materia_git.git`
+6. Entrar na pasta do projeto: `cd AtividadeAvaliativa_materia_git`
+7. Atualizar repositório local: `git pull origin main`
+8. Adicionar arquivo ao stage: `$ git add .`
+9. Criar commit: `git commit -m "Codigo concertado"`
+10. Verificar conexão remota: `git remote -v`
+11. Enviar para GitHub: `git push origin main`
 
 ## Observações
 Cada etapa foi realizada por apenas um integrante por vez, 
