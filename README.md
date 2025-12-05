@@ -11,16 +11,55 @@ Desenvolver colaborativamente um algoritmo em Portugol de operações básicas d
 
 ### Gabriel Seichi Baptista
 - Configurei a autenticação SSH para trabalhar de forma segura usando o comando:
-``
-ssh-keygen -t ed25519 -C "gabriels.baptista05@gmail.com"
-`` 
-- Configurei o nome e email de usuário:
 ```
-git config --global user.name "Gabriel Seichi Baptista"`
-git config --global user.email "gabriels.baptista05@gmail.com`
+seichi@seichi-Inspiron-15-3520:~/Desktop$ ssh-keygen -t ed25519 -C "gabriels.baptista05@gmail.com"
+Generating public/private ed25519 key pair.
+Enter file in which to save the key (/home/seichi/.ssh/id_ed25519): 
+/home/seichi/.ssh/id_ed25519 already exists.
+Overwrite (y/n)? y
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/seichi/.ssh/id_ed25519
+Your public key has been saved in /home/seichi/.ssh/id_ed25519.pub
+The key fingerprint is:
+SHA256:CN1syuSSWyNcBsOUjdu9p1P8KJGs2RtcHt6jdt9M7TY gabriels.baptista05@gmail.com
+The key's randomart image is:
++--[ED25519 256]--+
+|   o++           |
+|    ++.o         |
+|    .o=.+        |
+|   ..O.+.        |
+|    = B.S+o      |
+|     = o=++o    .|
+|    .  +o=ooo   o|
+|      o =.o.o. E.|
+|        .=.. ...=|
++----[SHA256]-----+
+```
+- Copiando a chave pública:
+```
+seichi@seichi-Inspiron-15-3520:~/Desktop$ cat ~/.ssh/id_ed25519.pub
+ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOsCDZ0ScqJRGIn51J9LmM7xAI9Y8I3i3t5Lb4dVZWNW gabriels.baptista05@gmail.com
+```
+- Peguei o conteúdo e colei no github na parte de settings/keys para criar uma nova chave
+- Clonei e Configurei o nome e email de usuário:
+```
+seichi@seichi-Inspiron-15-3520:~/Desktop$ git clone git@github.com:gaseichibp/AtividadeAvaliativa_materia_git.git
+Cloning into 'AtividadeAvaliativa_materia_git'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)
+Receiving objects: 100% (3/3), done.
+seichi@seichi-Inspiron-15-3520:~/Desktop$ cd AtividadeAvaliativa_materia_git 
+seichi@seichi-Inspiron-15-3520:~/Desktop/AtividadeAvaliativa_materia_git$ git config --global user.name "Gabriel Seichi Baptista"
+seichi@seichi-Inspiron-15-3520:~/Desktop/AtividadeAvaliativa_materia_git$ git config --global user.email "gabriels.baptista05@gmail.com
+```
+- verifiquei autenticação:
+```
+seichi@seichi-Inspiron-15-3520:~$ ssh -T git@github.com    
+Hi gaseichibp! You've successfully authenticated, but GitHub does not provide shell access.
 ```
 - Criei o repositório com ReadMe(somente o titulo do projeto)
-- Clonei o repositório com o comando `git clone` via SSH
 - Atualizei o repositório local com: `git pull origin main`
 - Em seguida criei o arquivo vazio chamado `algoritmo.por` usando `touch algoritmo.por`(comando linux)
 
